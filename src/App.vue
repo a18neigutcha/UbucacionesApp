@@ -1,21 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="row align-items-start">
+      <div class="col">
+        <BarraDeMenu nombreApp="Localizalo"/>
+      </div>
     </div>
     <router-view />
+    <div class="row align-items-end">
+      <div class="col">
+        <Footer/>
+      </div>
+    </div>
+    
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import BarraDeMenu from './components/BarraDeMenu.vue';
+import Footer from './components/Footer.vue';
+export default {
+  name: 'App',
+  components: {
+    BarraDeMenu,
+    Footer
+  }
 }
+</script>
+
+<style lang="scss">
 
 #nav {
   padding: 30px;
